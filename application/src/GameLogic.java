@@ -1,17 +1,13 @@
-import java.awt.Point;
-import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Random;
-import processing.core.PApplet;
 
-import static java.lang.Math.PI;
+import processing.core.PApplet;
 
 class GameLogic
 {
     private PApplet canvas;
-    private List<GameObject> gameObjects;
+    private List<Entity> gameObjects;
     private ListIterator li;
     Rectangle2D box;
 
