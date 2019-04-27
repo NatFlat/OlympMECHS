@@ -5,7 +5,7 @@ import java.util.ListIterator;
 
 public class main extends PApplet
 {
-    public GameLogic game;
+    public Control game;
     //public PlayerMech player;
     //public EnemyMech enemy;
     public List<Entity> gameObjects;
@@ -20,7 +20,7 @@ public class main extends PApplet
     @Override
     public void setup()
     {
-        game = new GameLogic(this);
+        game = new Control(this);
         size(800,800);
         rectMode(CENTER);
     }

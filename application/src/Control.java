@@ -4,7 +4,7 @@ import java.util.ListIterator;
 
 import processing.core.PApplet;
 
-class GameLogic
+class Control
 {
     private PApplet canvas;
     private List<Entity> gameObjects;
@@ -13,7 +13,7 @@ class GameLogic
 
     private int gameState;
 
-    public GameLogic(PApplet pApplet)
+    public Control(PApplet pApplet)
     {
         canvas = pApplet;
         canvas.background(0);
