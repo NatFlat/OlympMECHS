@@ -1,4 +1,4 @@
-class GameObject
+public class GameObject
 {
-    
 }
+
