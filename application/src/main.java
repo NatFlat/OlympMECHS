@@ -47,5 +47,6 @@ public class main extends PApplet
     public void mousePressed()
     {
         //game.mouseClick(mouseX,mouseY);
+        game.draw();
     }
 }
