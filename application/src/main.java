@@ -8,9 +8,9 @@ public class main extends PApplet
     public GameLogic game;
     //public PlayerMech player;
     //public EnemyMech enemy;
-    public List<GameObject> gameObjects;
-    public ListIterator<GameObject> iterator;
-    GameObject current;
+    public List<Entity> gameObjects;
+    public ListIterator<Entity> iterator;
+    Entity current;
 
     public static void main(String[] args)
     {
