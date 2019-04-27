@@ -5,7 +5,7 @@ import java.util.ListIterator;
 
 public class main extends PApplet
 {
-    //public GameLogic game;
+    public GameLogic game;
     //public PlayerMech player;
     //public EnemyMech enemy;
     public List<GameObject> gameObjects;
@@ -14,13 +14,13 @@ public class main extends PApplet
 
     public static void main(String[] args)
     {
-        PApplet.main(new String[] {"olympMECHS.main"});
+        PApplet.main(new String[] {"main"});
     }
 
     @Override
     public void setup()
     {
-        //game = new GameLogic();
+        game = new GameLogic(this);
         size(800,800);
         rectMode(CENTER);
     }
@@ -34,7 +34,18 @@ public class main extends PApplet
     @Override
     public void keyPressed(KeyEvent e)
     {
-
+        //game.keyPress(e);
     }
 
+    @Override
+    public void mouseMoved()
+    {
+        //game.aim(mouseX,mouseY);
+    }
+
+    @Override
+    public void mousePressed()
+    {
+        //game.mouseClick(mouseX,mouseY);
+    }
 }
