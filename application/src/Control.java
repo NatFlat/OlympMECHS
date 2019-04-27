@@ -9,7 +9,6 @@ class Control
     private PApplet canvas;
     private List<Entity> gameObjects;
     private ListIterator li;
-    Rectangle2D box;
 
     private int gameState;
 
@@ -18,24 +17,35 @@ class Control
         canvas = pApplet;
         canvas.background(0);
         gameState=0;
-        box = new Rectangle2D.Float(canvas.width/2, canvas.height/2, 20, 20);
+
+        PlayerMech player = new PlayerMech();
+        addGameObject(player);
+    }
+
+    public void addGameObject(GameObject o)
+    {
+        gameObjects.add(o);
     }
 
     public void draw()
     {
-        //TODO TEMPORARY
-        if(gameState==0){
-            canvas.background(255,255,255);
-            gameState=1;
-        } else {
-            gameState=0;
-            canvas.background(0);
+        for (int i = 0; i < gameObjects.size(); i++)
+        {
+//            gameObjects.get(i).render();
         }
-
-
-        canvas.fill(255,255,255);
-        canvas.textAlign(PApplet.CENTER);
-        canvas.text("OLYMPMECHS", canvas.width/2, 40);
+//      //TODO TEMPORARY
+//      if(gameState==0){
+//          canvas.background(255,255,255);
+//          gameState=1;
+//      } else {
+//          gameState=0;
+//          canvas.background(0);
+//      }
+//
+//
+//      canvas.fill(255,255,255);
+//      canvas.textAlign(PApplet.CENTER);
+//      canvas.text("OLYMPMECHS", canvas.width/2, 40);
         //TODO TEMPORARY^^^^
     }
 

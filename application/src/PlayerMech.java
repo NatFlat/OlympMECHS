@@ -1,7 +1,19 @@
-public class PlayerMech extends Mech
+import java.awt.*;
+
+public class PlayerMech extends GameObject
 {
-	PlayerMech(String filePath)
+	PlayerMech()
 	{
-		loadImage(filePath);
+		position.setLocation(0.0f,0.0f);
+		size = 128;
 	}
+
+	int size;
+	Graphics playerRect;
+
+	public void render()
+	{
+		playerRect.drawRect(position.x, position.y, size, size);
+	}
+
 }
