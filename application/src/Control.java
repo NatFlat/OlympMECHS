@@ -18,7 +18,6 @@ class Control
         canvas = pApplet;
         canvas.background(0);
         gameState=0;
-        box = new Rectangle2D.Float(canvas.width/2, canvas.height/2, 20, 20);
     }
 
     public void draw()
@@ -33,7 +32,7 @@ class Control
         }
 
 
-        canvas.fill(255,255,255);
+        canvas.fill(0);
         canvas.textAlign(PApplet.CENTER);
         canvas.text("OLYMPMECHS", canvas.width/2, 40);
         //TODO TEMPORARY^^^^

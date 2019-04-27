@@ -10,6 +10,8 @@ public class main extends PApplet
     //public EnemyMech enemy;
     public List<Entity> gameObjects;
     public ListIterator<Entity> iterator;
+    CrossHair ch;
+
     Entity current;
 
     public static void main(String[] args)
@@ -20,6 +22,7 @@ public class main extends PApplet
     @Override
     public void setup()
     {
+        ch = new CrossHair(this);
         game = new Control(this);
         size(800,800);
         rectMode(CENTER);
@@ -28,25 +31,20 @@ public class main extends PApplet
     @Override
     public void draw()
     {
-
+        background(255,0,0);
+        ch.render();
+        ch.step();
     }
 
     @Override
     public void keyPressed(KeyEvent e)
     {
-        //game.keyPress(e);
-    }
 
-    @Override
-    public void mouseMoved()
-    {
-        //game.aim(mouseX,mouseY);
     }
 
     @Override
     public void mousePressed()
     {
-        //game.mouseClick(mouseX,mouseY);
-        game.draw();
+
     }
 }
