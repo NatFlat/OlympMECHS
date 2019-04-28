@@ -1,4 +1,6 @@
+import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -9,7 +11,7 @@ class Control
     private PApplet canvas;
     private List<Entity> gameObjects;
     private ListIterator li;
-
+    TestBoy player;
     private int gameState;
 
     public Control(PApplet pApplet)
@@ -18,35 +20,23 @@ class Control
         canvas.background(0);
         gameState=0;
 
-        PlayerMech player = new PlayerMech();
-        addGameObject(player);
+        gameObjects = new ArrayList<>();
+        player = new TestBoy(pApplet);
+        gameObjects.add(player);
+
     }
 
-    public void addGameObject(GameObject o)
+    public void keyPressed(KeyEvent key)
     {
-        gameObjects.add(o);
+
     }
 
     public void draw()
     {
-        for (int i = 0; i < gameObjects.size(); i++)
+        for (Entity item : gameObjects)
         {
-//            gameObjects.get(i).render();
+            item.render();
         }
-//      //TODO TEMPORARY
-//      if(gameState==0){
-//          canvas.background(255,255,255);
-//          gameState=1;
-//      } else {
-//          gameState=0;
-//          canvas.background(0);
-//      }
-//
-//
-//      canvas.fill(255,255,255);
-//      canvas.textAlign(PApplet.CENTER);
-//      canvas.text("OLYMPMECHS", canvas.width/2, 40);
-        //TODO TEMPORARY^^^^
     }
 
 }
