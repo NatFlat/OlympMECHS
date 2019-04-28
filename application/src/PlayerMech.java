@@ -41,8 +41,22 @@ public class PlayerMech extends Entity
 					break;
 				}
 		}
+
 }
 
+	public int getSpeed()		{return speed;}
+
+	public Rectangle getBoundingBox()
+	{
+		Rectangle bb = new Rectangle(posX, posY, size, size);
+		return bb;
+	}
+
+	public Rectangle getBoundingBox(int transX, int transY)
+	{
+		Rectangle bb = new Rectangle((posX + transX), (posY + transY), size, size);
+		return bb;
+	}
 
 	@Override
 	public void update() {

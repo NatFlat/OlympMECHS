@@ -12,19 +12,25 @@ public class Obstacle extends Entity
 	public Obstacle(PApplet papp)
 	{
 		canvas = papp;
-		posX = 25;
-		posY = 25;
+		posX = 100;
+		posY = 100;
+	}
+
+	public void update()
+	{
+		//THERE'S NOTHING HERE! YET!
 	}
 
 
 	public void render()
 	{
-		canvas.fill(255,0,0);
+		canvas.fill(0,255,0);
 		canvas.rect(super.posX, super.posY, size, size);
 	}
 
 	public Rectangle getBoundingBox()
 	{
+
 		Rectangle bb = new Rectangle(posX, posY, size, size);
 		return bb;
 	}

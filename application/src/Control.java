@@ -12,6 +12,7 @@ class Control
     private List<Entity> gameObjects;
     private ListIterator li;
     PlayerMech player;
+    Obstacle fuckBox;
     private int gameState;
 
     public Control(PApplet pApplet)
@@ -22,13 +23,49 @@ class Control
 
         gameObjects = new ArrayList<>();
         player = new PlayerMech(pApplet);
+        fuckBox = new Obstacle(pApplet);
         gameObjects.add(player);
+        gameObjects.add(fuckBox);
 
     }
 
-    public void keyPressed(KeyEvent key)
+    public void keyPressed(KeyEvent ke)
     {
-        player.input(key);
+        switch (ke.getKeyCode())
+        {
+            case (KeyEvent.VK_LEFT):
+            {
+                if (!player.getBoundingBox(-player.getSpeed(), 0).intersects(fuckBox.getBoundingBox()))
+                {
+                    player.input(ke);
+                }
+                break;
+            }
+            case (KeyEvent.VK_RIGHT):
+            {
+                if (!player.getBoundingBox(player.getSpeed(), 0).intersects(fuckBox.getBoundingBox()))
+                {
+                    player.input(ke);
+                }
+                break;
+            }
+            case (KeyEvent.VK_UP):
+            {
+                if (!player.getBoundingBox(0, -player.getSpeed()).intersects(fuckBox.getBoundingBox()))
+                {
+                    player.input(ke);
+                }
+                break;
+            }
+            case (KeyEvent.VK_DOWN):
+            {
+                if (!player.getBoundingBox(0, player.getSpeed()).intersects(fuckBox.getBoundingBox()))
+                {
+                    player.input(ke);
+                }
+                break;
+            }
+        }
     }
 
     public void draw()
