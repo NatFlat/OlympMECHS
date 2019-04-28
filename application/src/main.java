@@ -23,9 +23,9 @@ public class main extends PApplet
     @Override
     public void setup()
     {
+        size(800,800);
         ch = new CrossHair(this);
         game = new Control(this);
-        size(800,800);
         rectMode(CENTER);
     }
 
@@ -34,6 +34,7 @@ public class main extends PApplet
     {
         background(255,0,0);
         ch.render();
+        ch.step();
     }
 
     @Override
