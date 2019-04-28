@@ -34,7 +34,7 @@ public class main extends PApplet
     @Override
     public void keyPressed(KeyEvent e)
     {
-        control.keyPressed(e);
+        control.controlPlayer(e);
     }
 
     @Override

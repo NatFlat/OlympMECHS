@@ -13,6 +13,8 @@ public abstract class Entity
 	//protected Point position;
 	protected int posX;
 	protected int posY;
+	protected int height;
+	protected int width;
 	protected int direction;
 	protected Rectangle2D bounds;
 
@@ -23,6 +25,11 @@ public abstract class Entity
     public Entity(){
 
     }
+
+    public Rectangle getBounds(){
+		return new Rectangle(posX, posY, width, height);
+	}
+
 
 	public abstract void update();
 

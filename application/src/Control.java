@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
@@ -24,48 +25,57 @@ class Control
         gameObjects = new ArrayList<>();
         player = new PlayerMech(pApplet);
         fuckBox = new Obstacle(pApplet);
+        Enemy enemy = new Enemy(pApplet);
+
+        gameObjects.add(enemy);
         gameObjects.add(player);
         gameObjects.add(fuckBox);
 
     }
 
-    public void keyPressed(KeyEvent ke)
+    public void controlPlayer(KeyEvent ke)
     {
-        switch (ke.getKeyCode())
-        {
-            case (KeyEvent.VK_LEFT):
+        for (Entity entity :
+                gameObjects) {
+            switch (ke.getKeyCode())
             {
-                if (!player.getBoundingBox(-player.getSpeed(), 0).intersects(fuckBox.getBoundingBox()))
+                case (KeyEvent.VK_LEFT):
                 {
-                    player.input(ke);
+                    if (!player.getBoundingBox(-player.getSpeed(), 0).intersects(entity.getBounds()))
+                    {
+                        player.posX -= player.getSpeed();
+                    }
+                    break;
                 }
-                break;
-            }
-            case (KeyEvent.VK_RIGHT):
-            {
-                if (!player.getBoundingBox(player.getSpeed(), 0).intersects(fuckBox.getBoundingBox()))
+                case (KeyEvent.VK_RIGHT):
                 {
-                    player.input(ke);
+                    if (!player.getBoundingBox(player.getSpeed(), 0).intersects(entity.getBounds()))
+                    {
+                        player.posX += player.getSpeed();
+                    }
+                    break;
                 }
-                break;
-            }
-            case (KeyEvent.VK_UP):
-            {
-                if (!player.getBoundingBox(0, -player.getSpeed()).intersects(fuckBox.getBoundingBox()))
+                case (KeyEvent.VK_UP):
                 {
-                    player.input(ke);
+                    if (!player.getBoundingBox(0, -player.getSpeed()).intersects(entity.getBounds()))
+                    {
+                        player.posY -= player.getSpeed();
+                    }
+                    break;
                 }
-                break;
-            }
-            case (KeyEvent.VK_DOWN):
-            {
-                if (!player.getBoundingBox(0, player.getSpeed()).intersects(fuckBox.getBoundingBox()))
+                case (KeyEvent.VK_DOWN):
                 {
-                    player.input(ke);
+                    if (!player.getBoundingBox(0, player.getSpeed()).intersects(entity.getBounds()))
+                    {
+                        player.posY += player.getSpeed();
+                    }
+                    break;
                 }
-                break;
             }
         }
+
+
+
     }
 
     public void draw()
@@ -73,6 +83,7 @@ class Control
         canvas.background(0);
         for (Entity item : gameObjects)
         {
+            item.update();
             item.render();
         }
     }

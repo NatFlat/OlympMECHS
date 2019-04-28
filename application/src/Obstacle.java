@@ -6,7 +6,7 @@ import java.awt.*;
 public class Obstacle extends Entity
 {
 	private PApplet canvas;
-	private int size = 50;
+
 	private int speed = 5;
 
 	public Obstacle(PApplet papp)
@@ -14,12 +14,10 @@ public class Obstacle extends Entity
 		canvas = papp;
 		posX = 100;
 		posY = 100;
+		height = 50;
+		width = 50;
 	}
 
-	public void update()
-	{
-		//THERE'S NOTHING HERE! YET!
-	}
 
 	@Override
 	public void update() {
@@ -30,13 +28,13 @@ public class Obstacle extends Entity
 	public void render()
 	{
 		canvas.fill(0,255,0);
-		canvas.rect(super.posX, super.posY, size, size);
+		canvas.rect(super.posX, super.posY, width, height);
 	}
 
 	public Rectangle getBoundingBox()
 	{
 
-		Rectangle bb = new Rectangle(posX, posY, size, size);
+		Rectangle bb = new Rectangle(posX, posY, width, height);
 		return bb;
 	}
 
