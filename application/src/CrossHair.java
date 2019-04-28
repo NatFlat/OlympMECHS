@@ -14,8 +14,8 @@ public class CrossHair extends Entity
     public CrossHair(PApplet screen)
     {
         this.screen = screen;
-        posX=screen.width/2;
-        posY=screen.height/2;
+        posX=this.screen.width/2;
+        posY=this.screen.height/2;
         direction = 0;
         angle = 0;
         x = 0;
