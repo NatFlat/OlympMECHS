@@ -43,7 +43,12 @@ public class PlayerMech extends Entity
 }
 
 
-public void render()
+	@Override
+	public void update() {
+
+	}
+
+	public void render()
 {
 	canvas.fill(255,0,0);
 	canvas.rect(super.posX, super.posY, size, size);
