@@ -2,24 +2,35 @@ import processing.core.PApplet;
 
 public class CrossHair extends Entity
 {
-    private PApplet canvas;
+    private PApplet screen;
     private int size = 50;
+    private float x;
 
-    public CrossHair(PApplet papp)
+    public CrossHair(PApplet screen)
     {
-        canvas = papp;
-        posX=papp.width/2;
-        posY=papp.height/2;
+        this.screen = screen;
+        posX=screen.width/2;
+        posY=screen.height/2;
         direction = 0;
+        x = 0;
     }
 
     public void render(){
-        canvas.fill(0);
-        canvas.ellipse(posX, posY, size, size);
+        direction = (int) Math.toDegrees(Math.atan2((screen.mouseX-posX),(posY-screen.mouseY)));
+        screen.pushMatrix();
+        screen.fill(255,255,255);
+        screen.translate(screen.width/2, screen.height/2);
+        screen.rotate(screen.degrees(screen.radians(direction)));
+        screen.rect(0, 0, size, size*2);
+        screen.popMatrix();
+
     }
 
     public void step(){
-        posY+=5;
+//        posY+=5;
+//        posX+=1+x;
+//        x+=0.1;
     }
+
 
 }

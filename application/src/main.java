@@ -33,7 +33,6 @@ public class main extends PApplet
     {
         background(255,0,0);
         ch.render();
-        ch.step();
     }
 
     @Override
