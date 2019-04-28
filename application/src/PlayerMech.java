@@ -12,7 +12,8 @@ public class PlayerMech extends Entity
 	public PlayerMech(PApplet papp)
 	{
 		canvas = papp;
-
+		posX = 25;
+		posY = 25;
 	}
 
 	public void input(KeyEvent ke)
