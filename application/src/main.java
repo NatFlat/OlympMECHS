@@ -8,6 +8,7 @@ public class main extends PApplet
     public Control game;
     //public PlayerMech player;
     //public EnemyMech enemy;
+
     public List<Entity> gameObjects;
     public ListIterator<Entity> iterator;
     CrossHair ch;
