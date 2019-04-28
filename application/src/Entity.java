@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 
-class Entity
+public abstract class Entity
 {
 	protected PApplet screen;
 	//protected Point position;
@@ -16,18 +16,7 @@ class Entity
 	protected int direction;
 	protected Rectangle2D bounds;
 
+	public abstract void update();
 
-	//Game Loops
-	public void input()
-	{
-
-	}
-	public void update()
-	{
-
-	}
-	public void render()
-	{
-
-	}
+	public abstract void render();
 }
