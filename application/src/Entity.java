@@ -24,6 +24,9 @@ public abstract class Entity
 
     }
 
+	public int getPosX() 			{return posX;}
+	public int getPosY()			{return posY;}
+
 	public abstract void update();
 
 	public abstract void render();
