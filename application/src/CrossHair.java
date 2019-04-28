@@ -24,7 +24,7 @@ public class CrossHair extends Entity
 
     public void render()
     {
-        direction =(float)(Math.atan2((screen.mouseX-screen.width/2),(screen.height/2-screen.mouseY)));
+        direction =(float)(Math.atan2((screen.mouseX-posX),(posY-screen.mouseY)));
 
         screen.pushMatrix();
         screen.fill(255,255,255);
