@@ -2,9 +2,9 @@ import processing.core.PApplet;
 
 public class Enemy extends Entity {
 
-    PApplet canvas;
-    public Enemy(PApplet canvas){
-        this.canvas = canvas;
+    private int size = 50;
+    public Enemy(PApplet screen){
+        super(screen);
     }
 
 
@@ -15,6 +15,7 @@ public class Enemy extends Entity {
 
     @Override
     public void render() {
-
+        screen.fill(255,0,0);
+        screen.triangle(50, 0, 100, 100, 0, 100);
     }
 }

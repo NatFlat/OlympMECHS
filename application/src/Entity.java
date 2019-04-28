@@ -16,6 +16,14 @@ public abstract class Entity
 	protected int direction;
 	protected Rectangle2D bounds;
 
+	public Entity(PApplet screen){
+	    this.screen = screen;
+    }
+
+    public Entity(){
+
+    }
+
 	public abstract void update();
 
 	public abstract void render();

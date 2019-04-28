@@ -5,13 +5,12 @@ import java.awt.*;
 
 public class PlayerMech extends Entity
 {
-	private PApplet canvas;
 	private int size = 50;
 	private int speed = 5;
 
-	public PlayerMech(PApplet papp)
+	public PlayerMech(PApplet screen)
 	{
-		canvas = papp;
+	    super(screen);
 		posX = 25;
 		posY = 25;
 	}
@@ -63,11 +62,10 @@ public class PlayerMech extends Entity
 
 	}
 
-	public void render()
-{
-	canvas.fill(255,0,0);
-	canvas.rect(super.posX, super.posY, size, size);
-}
+	public void render() {
+        screen.fill(255,0,0);
+        screen.rect(super.posX, super.posY, size, size);
+    }
 
 
 }
