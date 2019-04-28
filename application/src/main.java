@@ -44,6 +44,6 @@ public class main extends PApplet
     @Override
     public void mousePressed()
     {
-
+        ch.fire();
     }
 }
