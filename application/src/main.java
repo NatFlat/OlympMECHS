@@ -46,6 +46,6 @@ public class main extends PApplet
     @Override
     public void mousePressed()
     {
-
+        control.click();
     }
 }

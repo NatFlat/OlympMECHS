@@ -77,4 +77,9 @@ class Control
         }
     }
 
+    public void click()
+    {
+        player.fire();
+    }
+
 }

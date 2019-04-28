@@ -13,7 +13,7 @@ public abstract class Entity
 	//protected Point position;
 	protected int posX;
 	protected int posY;
-	protected int direction;
+	protected float direction;
 	protected Rectangle2D bounds;
 
 	public Entity(PApplet screen){

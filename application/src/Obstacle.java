@@ -21,12 +21,6 @@ public class Obstacle extends Entity
 		//THERE'S NOTHING HERE! YET!
 	}
 
-	@Override
-	public void update() {
-
-	}
-
-
 	public void render()
 	{
 		canvas.fill(0,255,0);
