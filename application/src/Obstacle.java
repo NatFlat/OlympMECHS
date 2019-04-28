@@ -16,6 +16,11 @@ public class Obstacle extends Entity
 		posY = 25;
 	}
 
+	@Override
+	public void update() {
+
+	}
+
 
 	public void render()
 	{
