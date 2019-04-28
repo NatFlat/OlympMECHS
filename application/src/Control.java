@@ -11,7 +11,7 @@ class Control
     private PApplet canvas;
     private List<Entity> gameObjects;
     private ListIterator li;
-    TestBoy player;
+    PlayerMech player;
     private int gameState;
 
     public Control(PApplet pApplet)
@@ -21,18 +21,19 @@ class Control
         gameState=0;
 
         gameObjects = new ArrayList<>();
-        player = new TestBoy(pApplet);
+        player = new PlayerMech(pApplet);
         gameObjects.add(player);
 
     }
 
     public void keyPressed(KeyEvent key)
     {
-
+        player.input(key);
     }
 
     public void draw()
     {
+        canvas.background(0);
         for (Entity item : gameObjects)
         {
             item.render();
